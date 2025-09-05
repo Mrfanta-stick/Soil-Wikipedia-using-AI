@@ -1,0 +1,19 @@
+arr=[3, 6, 2, 5, 1, 7, 4, 8]
+def solve(arr):
+    n=len(arr)
+    list1=[]
+    for i in range (n):
+        li=0
+        ri=0
+        for j in range (i-1,-1,-1):
+            if arr[j]>arr[i]:
+                li=j+1
+                break
+        for k in range (i+1,n):
+            if arr[k]>arr[i]:
+                ri=k+1
+                break
+        list1.append(li*ri)
+    print(max(list1))
+    print(list1)
+solve(arr)
